@@ -1,5 +1,5 @@
 {
-    "name": "digiaonline/graphql-datetime-scalar-php",
+    "name": "digiaonline/graphql-datetime-scalar",
     "description": "Date, Time and DateTime scalar types for our GraphQL implementation",
     "type": "library",
     "license": "MIT",
