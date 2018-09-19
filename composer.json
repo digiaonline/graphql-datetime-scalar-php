@@ -1,0 +1,37 @@
+{
+    "name": "digiaonline/graphql-datetime-scalar-php",
+    "description": "Date, Time and DateTime scalar types for our GraphQL implementation",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Stenvall",
+            "email": "sam.stenvall@digia.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "digiaonline/graphql": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.3",
+        "digiaonline/graphql": "dev-master#97cd9ff3720a6c0f57f917165ceedf4052be4cd3",
+        "phpstan/phpstan": "^0.10.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Digia\\GraphQL\\Types\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Digia\\GraphQL\\Types\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "phpunit",
+            "phpstan analyse -l 7 src/"
+        ]
+    }
+}
