@@ -9,21 +9,25 @@ abstract class AbstractDateTimeScalarType extends ScalarType
 {
 
     /**
-     * @return string the format when representing the date time as a string
+     * @return string the default format when representing the date time as a string
      */
-    abstract protected function getFormat(): string;
+    abstract protected function getDefaultFormat(): string;
 
     /**
      * AbstractDateTimeScalarType constructor.
+     *
+     * @param null|string $format
      */
-    public function __construct()
+    public function __construct(?string $format = null)
     {
+        $format = $format ?? $this->getDefaultFormat();
+
         parent::__construct(
             $this->getName(),
             $this->getDescription(),
-            function ($value) {
+            function ($value) use ($format) {
                 if ($value instanceof \DateTimeInterface) {
-                    return $value->format($this->getFormat());
+                    return $value->format($format);
                 }
 
                 return null;

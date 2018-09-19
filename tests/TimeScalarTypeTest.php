@@ -14,7 +14,7 @@ class TimeScalarTypeTest extends TestCase
      * @covers \Digia\GraphQL\Types\TimeScalarType::__construct()
      * @covers \Digia\GraphQL\Types\TimeScalarType::getName()
      * @covers \Digia\GraphQL\Types\TimeScalarType::getDescription()
-     * @covers \Digia\GraphQL\Types\TimeScalarType::getFormat()
+     * @covers \Digia\GraphQL\Types\TimeScalarType::getDefaultFormat()
      */
     public function testScalarType(): void
     {
@@ -24,6 +24,8 @@ class TimeScalarTypeTest extends TestCase
         $this->assertEquals('Represents a time', $timeType->getDescription());
 
         $this->assertEquals('14:30:37+00:00', $timeType->serialize(new \DateTime('2018-01-01T14:30:37+00:00')));
+        $this->assertEquals('14:30',
+            (new TimeScalarType('H:i'))->serialize(new \DateTime('2018-01-01T14:30:37+00:00')));
         $this->assertNull($timeType->serialize('not a datetime object'));
 
         /** @var \DateTimeInterface $date */

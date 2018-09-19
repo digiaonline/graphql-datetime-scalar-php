@@ -23,7 +23,7 @@ class DateScalarType extends AbstractDateTimeScalarType
     /**
      * @inheritdoc
      */
-    protected function getFormat(): string
+    protected function getDefaultFormat(): string
     {
         return 'Y-m-d';
     }

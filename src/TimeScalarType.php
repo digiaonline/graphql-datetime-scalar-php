@@ -24,7 +24,7 @@ class TimeScalarType extends AbstractDateTimeScalarType
     /**
      * @inheritdoc
      */
-    protected function getFormat(): string
+    protected function getDefaultFormat(): string
     {
         return 'H:i:sP';
     }

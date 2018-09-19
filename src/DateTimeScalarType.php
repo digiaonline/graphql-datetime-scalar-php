@@ -23,7 +23,7 @@ class DateTimeScalarType extends AbstractDateTimeScalarType
     /**
      * @inheritdoc
      */
-    protected function getFormat(): string
+    protected function getDefaultFormat(): string
     {
         return \DateTime::ATOM;
     }

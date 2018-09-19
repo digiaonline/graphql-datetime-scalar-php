@@ -14,7 +14,7 @@ class DateTimeScalarTypeTest extends TestCase
      * @covers \Digia\GraphQL\Types\DateTimeScalarType::__construct()
      * @covers \Digia\GraphQL\Types\DateTimeScalarType::getName()
      * @covers \Digia\GraphQL\Types\DateTimeScalarType::getDescription()
-     * @covers \Digia\GraphQL\Types\DateTimeScalarType::getFormat()
+     * @covers \Digia\GraphQL\Types\DateTimeScalarType::getDefaultFormat()
      */
     public function testScalarType(): void
     {
@@ -25,6 +25,8 @@ class DateTimeScalarTypeTest extends TestCase
 
         $this->assertEquals('2018-01-01T14:30:37+00:00',
             $dateTimeType->serialize(new \DateTime('2018-01-01T14:30:37+00:00')));
+        $this->assertEquals('1.1.2018 14:30:37',
+            (new DateTimeScalarType('j.n.Y H:i:s'))->serialize(new \DateTime('2018-01-01T14:30:37Z+00:00')));
         $this->assertNull($dateTimeType->serialize('not a datetime object'));
 
         /** @var \DateTimeInterface $date */
