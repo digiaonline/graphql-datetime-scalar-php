@@ -10,6 +10,12 @@ use PHPUnit\Framework\TestCase;
 class TimeScalarTypeTest extends TestCase
 {
 
+    /**
+     * @covers \Digia\GraphQL\Types\TimeScalarType::__construct()
+     * @covers \Digia\GraphQL\Types\TimeScalarType::getName()
+     * @covers \Digia\GraphQL\Types\TimeScalarType::getDescription()
+     * @covers \Digia\GraphQL\Types\TimeScalarType::getFormat()
+     */
     public function testScalarType(): void
     {
         $timeType = new TimeScalarType();

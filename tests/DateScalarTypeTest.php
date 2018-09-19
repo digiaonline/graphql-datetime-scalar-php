@@ -10,6 +10,12 @@ use PHPUnit\Framework\TestCase;
 class DateScalarTypeTest extends TestCase
 {
 
+    /**
+     * @covers \Digia\GraphQL\Types\DateScalarType::__construct()
+     * @covers \Digia\GraphQL\Types\DateScalarType::getName()
+     * @covers \Digia\GraphQL\Types\DateScalarType::getDescription()
+     * @covers \Digia\GraphQL\Types\DateScalarType::getFormat()
+     */
     public function testScalarType(): void
     {
         $dateType = new DateScalarType();
