@@ -10,10 +10,6 @@ class DateScalarTypeTest extends TestCase
 {
 
     /**
-     * @covers \Digia\GraphQL\Types\DateScalarType::__construct()
-     * @covers \Digia\GraphQL\Types\DateScalarType::getName()
-     * @covers \Digia\GraphQL\Types\DateScalarType::getDescription()
-     * @covers \Digia\GraphQL\Types\DateScalarType::getDefaultFormat()
      * @throws \Digia\GraphQL\Error\InvalidTypeException
      */
     public function testScalarType(): void
