@@ -47,6 +47,9 @@ $timeType     = new TimeScalarType('H:i'); // 14:35
 $dateTimeType = new DateTimeScalarType('U'); // 1537361927
 ```
 
+Like the built-in scalar types, if a value cannot be serialized or parsed correctly into a `\DateTimeInterface`, 
+a `\Digia\GraphQL\Error\InvalidTypeException` will be thrown.
+
 ## License
 
 MIT
