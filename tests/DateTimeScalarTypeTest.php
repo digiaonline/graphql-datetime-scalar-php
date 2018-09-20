@@ -15,6 +15,7 @@ class DateTimeScalarTypeTest extends TestCase
      * @covers \Digia\GraphQL\Types\DateTimeScalarType::getName()
      * @covers \Digia\GraphQL\Types\DateTimeScalarType::getDescription()
      * @covers \Digia\GraphQL\Types\DateTimeScalarType::getDefaultFormat()
+     * @throws \Digia\GraphQL\Error\InvalidTypeException
      */
     public function testScalarType(): void
     {

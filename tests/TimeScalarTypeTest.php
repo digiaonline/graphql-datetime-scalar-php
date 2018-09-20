@@ -14,6 +14,7 @@ class TimeScalarTypeTest extends TestCase
      * @covers \Digia\GraphQL\Types\TimeScalarType::getName()
      * @covers \Digia\GraphQL\Types\TimeScalarType::getDescription()
      * @covers \Digia\GraphQL\Types\TimeScalarType::getDefaultFormat()
+     * @throws \Digia\GraphQL\Error\InvalidTypeException
      */
     public function testScalarType(): void
     {
