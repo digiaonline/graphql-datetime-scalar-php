@@ -63,7 +63,7 @@ abstract class AbstractDateTimeScalarType extends ScalarType
     public function parseValue($value)
     {
         if (\is_string($value)) {
-            return new \DateTime($value);
+            return \DateTime::createFromFormat($this->format, $value);
         }
 
         throw new InvalidTypeException(sprintf('Failed to parse value for %s, expected value to be a string, got %s',

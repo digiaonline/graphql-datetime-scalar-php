@@ -48,6 +48,11 @@ class DateTimeScalarTypeTest extends TestCase
         $this->assertEquals('30', $date->format('i'));
         $this->assertEquals('37', $date->format('s'));
         $this->assertEquals('+00:00', $date->format('P'));
+
+        // Check that the same custom format can be used as input and output
+        $dateTimeType = new DateTimeScalarType('U');
+        $date         = $dateTimeType->parseValue((string)1537361927);
+        $this->assertEquals(1537361927, $date->format('U'));
     }
 
     /**
