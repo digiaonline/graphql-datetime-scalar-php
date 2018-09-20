@@ -74,6 +74,7 @@ class DateTimeScalarTypeTest extends TestCase
 
     /**
      * @expectedException \Digia\GraphQL\Error\InvalidTypeException
+     * @3@expectedExceptionMessage Failed to parse literal DateTime, expected node to be an instance of Digia\GraphQL\Language\Node\StringValueNode, got Digia\GraphQL\Language\Node\IntValueNode
      */
     public function testInvalidTypeWhenParsingLiteral(): void
     {

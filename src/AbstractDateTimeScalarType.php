@@ -82,7 +82,6 @@ abstract class AbstractDateTimeScalarType extends ScalarType
         }
 
         throw new InvalidTypeException(sprintf('Failed to parse literal %s, expected node to be an instance of %s, got %s',
-            $this->getName(), StringValueNode::class, \gettype($node)));
+            $this->getName(), StringValueNode::class, \get_class($node)));
     }
-
 }
