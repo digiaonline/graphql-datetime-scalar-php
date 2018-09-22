@@ -39,6 +39,14 @@ $executableSchema = buildSchema($schemaDefinition, [
 ]);
 ```
 
+While it's not strictly necessary it might be a good idea to also mention in your schema that these types exist:
+
+```graphql schema
+scalar Date
+scalar Time
+scalar DateTime
+```
+
 You can specify the format by passing a format string to the constructor:
 
 ```php
